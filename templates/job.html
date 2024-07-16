@@ -7,17 +7,23 @@
     <title>Job Placement</title>
     <!-- Add Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-     <!-- Add Bootstrap Icons library -->
+    <!-- Add Bootstrap Icons library -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-         body {
+        body {
             background-image: url('../static/background.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-             /* Ensure text is readable */
+            color: white; /* Ensure text is readable */
         }
+
+        .navbar {
+            background: linear-gradient(90deg, #ff7eb9, #ff65a3, #f857a6, #ff5d8f, #d45087, #9b5de5, #845ec2, #7157f6, #5856d6, #4e42a4);
+            border-radius: 10px;
+        }
+
         .container {
             border-radius: 15px;
             color: black;
@@ -42,41 +48,44 @@
             padding: 20px;
             border-radius: 15px;
         }
+
+        .nav-link {
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: orange;
+        }
     </style>
 </head>
 
 <body>
-<!-- Navbar with attractive background and shadow effects -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container-fluid" style="background:#FCDCCB; height:70px;">
-            <a class="navbar-brand" href="#">TalentSphere </a>
+    <!-- Navbar with attractive background and shadow effects -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container-fluid" style="height:70px;">
+            <a class="navbar-brand" href="#">TalentSphere</a>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index" style="transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='orange';" onmouseout="this.style.backgroundColor='transparent';"><i class="bi bi-house-door"></i> Home</a>
+                        <a class="nav-link" href="/index" style=" font-weight: bold;"><i class="bi bi-house-door"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/job" style="transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='orange';" onmouseout="this.style.backgroundColor='transparent';"><i class="bi bi-briefcase"></i> Recruitment</a>
+                        <a class="nav-link" href="/job" style=" font-weight: bold;"><i class="bi bi-briefcase"></i> Recruitment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/ana" style="transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='orange';" onmouseout="this.style.backgroundColor='transparent';"><i class="bi bi-bar-chart"></i> Dashboard</a>
+                        <a class="nav-link" href="/ana" style=" font-weight: bold;"><i class="bi bi-bar-chart"></i> Dashboard</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
-<!--add forms-->
-
-
-<div class="container mt-4" style="width: 80%; background: rgba(44, 43, 43, 0.8); color: white; border-radius: 45px; border: 10px solid white; margin: auto;">
-
-    <h1 class="navbar-brand text-center" style="margin-left:40%; text:bold;" href="#">Enter Employee Details</h1>
-
-    <form action="/placement" method="post">
-        <div class="row">
-            <div class="col-md-6">
+    <!-- Add forms -->
+    <div class="container mt-4" style="width: 80%; background: rgba(44, 43, 43, 0.8); color: white; border-radius: 45px; border: 10px solid white; margin: auto;">
+        <h1 class="navbar-brand text-center" style="margin-left:40%; text:bold;" href="#">Enter Employee Details</h1>
+        <form action="/placement" method="post">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="sl_no">Serial Number</label>
@@ -133,15 +142,11 @@
                         </div>
                         <!-- Add other fields in a similar structure -->
                     </div>
-
+                </div>
             </div>
-        </div>
-
-      <button type="submit" class="btn btn-danger btn-lg" style="width:100%;">Predict</button>
-    </form>
-</div>
-
-
+            <button type="submit" class="btn btn-danger btn-lg" style="width:100%;">Predict</button>
+        </form>
+    </div>
 
     {% if result %}
     <div class="result-container container">
@@ -154,7 +159,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
