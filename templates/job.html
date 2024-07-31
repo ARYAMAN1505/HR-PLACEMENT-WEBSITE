@@ -88,16 +88,17 @@
                 <div class="col-md-6">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="sl_no">Serial Number</label>
-                            <input type="number" class="form-control" id="sl_no" name="sl_no">
-                        </div>
-                        <div class="form-group col-md-6">
                             <label for="gender">Gender</label>
                             <select class="form-control" id="gender" name="gender">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="etest_p">ETest Percentage</label>
+                            <input type="number" class="form-control" id="etest_p" name="etest_p" step="0.01" required>
+                        </div>
+                        
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -115,17 +116,18 @@
                             <input type="number" class="form-control" id="degree_p" name="degree_p" step="0.01" required>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="mba_p">MBA Percentage</label>
+                            <input type="number" class="form-control" id="mba_p" name="mba_p" step="0.01" required>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                             <label for="workex">Work Experience</label>
                             <select class="form-control" id="workex" name="workex">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="etest_p">ETest Percentage</label>
-                            <input type="number" class="form-control" id="etest_p" name="etest_p" step="0.01" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="specialisation">Specialization</label>
@@ -134,13 +136,6 @@
                                 <option value="Mkt&Fin">Mkt&Fin</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="mba_p">MBA Percentage</label>
-                            <input type="number" class="form-control" id="mba_p" name="mba_p" step="0.01" required>
-                        </div>
-                        <!-- Add other fields in a similar structure -->
                     </div>
                 </div>
             </div>
