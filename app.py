@@ -86,9 +86,8 @@ def histogram(df, col):
     plt.close()
 
 #=====================prediction function====================================================
-def prediction(sl_no, gender, ssc_p, hsc_p, degree_p, workex, etest_p, specialisation, mba_p):
+def prediction( gender, ssc_p, hsc_p, degree_p, workex, etest_p, specialisation, mba_p):
     data = {
-    'sl_no': [sl_no],
     'gender': [gender],
     'ssc_p': [ssc_p],
     'hsc_p': [hsc_p],
@@ -149,7 +148,6 @@ def ana():
 @app.route("/placement",methods=['POST','GET'])
 def placement():
     if request.method == 'POST':
-        sl_no = request.form['sl_no']
         gender = request.form['gender']
         ssc_p = request.form['ssc_p']
         hsc_p = request.form['hsc_p']
@@ -159,7 +157,7 @@ def placement():
         specialisation = request.form['specialisation']
         mba_p = request.form['mba_p']
 
-        result = prediction(sl_no, gender, ssc_p, hsc_p, degree_p, workex, etest_p, specialisation, mba_p)
+        result = prediction( gender, ssc_p, hsc_p, degree_p, workex, etest_p, specialisation, mba_p)
 
         if result == 1:
             pred = "Placed"
@@ -175,4 +173,5 @@ def placement():
 
 # ========================python main===================================================
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+
+    app.run(debug=True)
